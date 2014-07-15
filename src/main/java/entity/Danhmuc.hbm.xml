@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 12, 2014 12:42:33 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="entity.Danhmuc" table="danhmuc" catalog="demohibernate">
+        <id name="madanhmuc" type="java.lang.Integer">
+            <column name="madanhmuc" />
+            <generator class="identity" />
+        </id>
+        <property name="tendanhmuc" type="string">
+            <column name="tendanhmuc" not-null="true" />
+        </property>
+        <set name="sanphams" table="sanpham" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="madanhmuc" not-null="true" />
+            </key>
+            <one-to-many class="entity.Sanpham" />
+        </set>
+    </class>
+</hibernate-mapping>
