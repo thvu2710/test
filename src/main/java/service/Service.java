@@ -61,7 +61,7 @@ public class Service {
 
 	@GET
 	@Path("/findallsp")
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<Sanpham> finAllSP() {
 		return sp.findAll();
 	}
