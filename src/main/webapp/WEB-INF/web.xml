@@ -27,14 +27,5 @@
 		<servlet-name>RestServlet</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<description></description>
-		<display-name>LoginTest</display-name>
-		<servlet-name>LoginTest</servlet-name>
-		<servlet-class>service.LoginTest</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>LoginTest</servlet-name>
-		<url-pattern>/LoginTest</url-pattern>
-	</servlet-mapping>
+	
 </web-app>
