@@ -4,7 +4,7 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://127.8.156.2:3306/demohibernateds</property>
+    <property name="hibernate.connection.url">jdbc:mysql://127.8.156.2:3306/mistake</property>
     <property name="hibernate.connection.username">adminmeXSt7Y</property>
     <property name="hibernate.connection.password"> wZwBSispilMX</property>
     <property name="hibernate.show_sql">true</property>
