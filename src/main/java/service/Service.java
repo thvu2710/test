@@ -10,12 +10,14 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import entity.Danhmuc;
 import entity.Sanpham;
 import model.*;
 
 @Path("service")
 public class Service {
 	SanPhamModel sp = new SanPhamModel();
+	DanhMucModel dm = new DanhMucModel();
 
 	// db tam thoi
 	static ArrayList<Person> p = new ArrayList<Person>();
@@ -58,10 +60,15 @@ public class Service {
 	}
 
 	@GET
-	@Path("/findall")
+	@Path("/findallsp")
 	@Produces(MediaType.APPLICATION_XML)
-	public List<Sanpham> finAll() {
+	public List<Sanpham> finAllSP() {
 		return sp.findAll();
 	}
-
+	@GET
+	@Path("/findalldm")
+	@Produces(MediaType.APPLICATION_XML)
+	public List<Danhmuc> finAllDM() {
+		return dm.findAll();
+	}
 }
