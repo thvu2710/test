@@ -67,7 +67,7 @@ public class Service {
 	}
 	@GET
 	@Path("/findalldm")
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<Danhmuc> finAllDM() {
 		return dm.findAll();
 	}
