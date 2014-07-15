@@ -58,14 +58,6 @@ public class Service {
 	}
 
 	@GET
-	@Path("/login")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Person> login() {
-		return p;
-	}
-
-
-	@GET
 	@Path("/findall")
 	@Produces(MediaType.APPLICATION_XML)
 	public List<Sanpham> finAll() {
