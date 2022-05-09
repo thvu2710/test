@@ -5,10 +5,29 @@ import { injected } from "../components/wallet/connectors"
 export default function Home() {
   const { active, account, library, connector, activate, deactivate } = useWeb3React()
 
+
+
+  function isMobileDevice() {
+    return 'ontouchstart' in window || 'onmsgesturechange' in window
+  }
+
+  async function checkIfWalletIsConnected() {
+    if (!(window.web3 || window.ethereum)) {
+        if (isMobileDevice()) {
+            const dappUrl = 'nextjs-rmd.vercel.app/'
+            const metamaskAppDeepLink = 'https://metamask.app.link/dapp/' + dappUrl
+
+            window.location.href = metamaskAppDeepLink
+        } else {
+            window.open('https://metamask.io/download/', '_blank')
+        }
+    } else {
+        await connect()
+    }
+}
   async function connect() {
     try {
       await activate(injected)
-      localStorage.setItem('isWalletConnected', true)
     } catch (ex) {
       console.log(ex)
     }
@@ -17,7 +36,6 @@ export default function Home() {
   async function disconnect() {
     try {
       deactivate()
-      localStorage.setItem('isWalletConnected', false)
     } catch (ex) {
       console.log(ex)
     }
@@ -25,14 +43,7 @@ export default function Home() {
 
   useEffect(() => {
     const connectWalletOnPageLoad = async () => {
-      if (localStorage?.getItem('isWalletConnected') === 'true') {
-        try {
-          await activate(injected)
-          localStorage.setItem('isWalletConnected', true)
-        } catch (ex) {
-          console.log(ex)
-        }
-      }
+      await checkIfWalletIsConnected()
     }
     connectWalletOnPageLoad()
   }, [])
