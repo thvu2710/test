@@ -41,6 +41,7 @@ export default function Home() {
                         },
                     ],
                 })
+                await activate(injected);
             } catch (err) {
                 console.error('Wallet Add error', err)
             }
