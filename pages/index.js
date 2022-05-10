@@ -30,7 +30,7 @@ export default function Home() {
                     params: [
                         {
                             chainName: 'Polygon Testnet',
-                            chainId: '80001',
+                            chainId: '0x13881',
                             blockExplorerUrls: ['https://mumbai.polygonscan.com/'],
                             rpcUrls: ['https://matic-mumbai.chainstacklabs.com'],
                             nativeCurrency: {
