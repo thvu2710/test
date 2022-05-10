@@ -50,7 +50,9 @@ export default function Home() {
 }
 
   async function checkIfWalletIsConnected() {
+    debugger
     if (!(window.web3 || window.ethereum)) {
+      debugger
       if (isMobileDevice()) {
         const dappUrl = "test-qpor5dte4-thvu2710.vercel.app/";
         const metamaskAppDeepLink = "https://metamask.app.link/dapp/" + dappUrl;
@@ -59,14 +61,17 @@ export default function Home() {
       } else {
         window.open("https://metamask.io/download/", "_blank");
       }
-    } else if ((window.web3 || window.ethereum) && currentNetwork !== "80001") {
+    } else if ((window.web3 || window.ethereum) && currentNetwork && currentNetwork !== "80001") {
+      debugger
       changeNetwork();
     } else {
+      debugger
       await connect();
     }
   }
   async function connect() {
     try {
+      debugger
       await activate(injected);
     } catch (ex) {
       console.log(ex);
