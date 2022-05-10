@@ -14,7 +14,7 @@ export default function Home() {
   async function checkIfWalletIsConnected() {
     if (!(window.web3 || window.ethereum)) {
         if (isMobileDevice()) {
-            const dappUrl = 'test-thvu2710.vercel.app/'
+            const dappUrl = 'test-qpor5dte4-thvu2710.vercel.app/'
             const metamaskAppDeepLink = 'https://metamask.app.link/dapp/' + dappUrl
 
             window.location.href = metamaskAppDeepLink
