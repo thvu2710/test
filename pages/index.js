@@ -54,7 +54,7 @@ export default function Home() {
     if (!(window.web3 || window.ethereum)) {
       debugger
       if (isMobileDevice()) {
-        const dappUrl = "test-qpor5dte4-thvu2710.vercel.app/";
+        const dappUrl = "test-git-master-thvu2710.vercel.app/";
         const metamaskAppDeepLink = "https://metamask.app.link/dapp/" + dappUrl;
 
         window.location.href = metamaskAppDeepLink;
